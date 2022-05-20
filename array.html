@@ -19,22 +19,42 @@
 
       // 增加size
       animals = animals.map((animal, index) => {
-        return (animal = { ...animal, size: 'small' });
+        // return (animal = { ...animal, size: 'small' });
+        return { ...animal, size: 'small' };
       });
       console.log('增加size', animals);
 
       // 修改bear size
-      let bearIndex = animals.findIndex((animal, index) => {
-        return animal.cn == '熊';
+      // type1: findindex
+      // let bearIndex = animals.findIndex((animal, index) => {
+      //   return animal.cn === '熊';
+      // });
+      // // console.log(bearIndex);
+      // animals[bearIndex].size = 'large';
+
+      // type2: map
+      animals = animals.map((animal, index) => {
+        if (animal.cn === '熊') {
+          return { ...animal, size: 'large' };
+        } else {
+          return animal;
+        }
       });
-      // console.log(bearIndex);
-      animals[bearIndex].size = 'large';
       console.log('修改bear size', animals);
 
       // 新增一筆資料在index=2後面
-      let [cat, dog, rabbit, bear, mouse] = animals;
       let pig = { id: 'a35', en: 'pig', cn: '豬', num: 3, size: 'medium' };
-      animals = [cat, dog, rabbit, pig, bear, mouse];
+      // 硬拆
+      // let [cat, dog, rabbit, bear, mouse] = animals;
+      // animals = [cat, dog, rabbit, pig, bear, mouse];
+      // 先分在拆
+      let lessThanIndex2 = animals.filter((animal, i) => {
+        return i <= 2;
+      });
+      let MoreThanIndex2 = animals.filter((animal, i) => {
+        return i > 2;
+      });
+      animals = [...lessThanIndex2, pig, ...MoreThanIndex2];
       console.log('新增pig', animals);
 
       // 找出 num <10 的動物中文
@@ -44,9 +64,9 @@
       let animalNameCn = lessThanTen.map((animal, index) => {
         return animal.cn;
       });
-
-      // console.log(animals);
+      let resAnimal = animals.find((animal) => animal.num < 10).cn;
       console.log('num <10', animalNameCn);
+      console.log('num <10', resAnimal);
     </script>
   </body>
 </html>
