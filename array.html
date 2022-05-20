@@ -15,20 +15,27 @@
         { id: 'a4', en: 'bear', cn: '熊', num: 15 },
         { id: 'a5', en: 'mouse', cn: '鼠', num: 20 },
       ];
+      console.log('原始陣列', animals);
+
       // 增加size
       animals = animals.map((animal, index) => {
         return (animal = { ...animal, size: 'small' });
       });
+      console.log('增加size', animals);
 
       // 修改bear size
       let bearIndex = animals.findIndex((animal, index) => {
         return animal.cn == '熊';
       });
-      console.log(bearIndex);
+      // console.log(bearIndex);
       animals[bearIndex].size = 'large';
+      console.log('修改bear size', animals);
 
       // 新增一筆資料在index=2後面
-      // animals = animals.map((animal, index) => {});
+      let [cat, dog, rabbit, bear, mouse] = animals;
+      let pig = { id: 'a35', en: 'pig', cn: '豬', num: 3, size: 'medium' };
+      animals = [cat, dog, rabbit, pig, bear, mouse];
+      console.log('新增pig', animals);
 
       // 找出 num <10 的動物中文
       let lessThanTen = animals.filter((animal, index) => {
@@ -38,8 +45,8 @@
         return animal.cn;
       });
 
-      console.log(animals);
-      console.log(animalNameCn);
+      // console.log(animals);
+      console.log('num <10', animalNameCn);
     </script>
   </body>
 </html>
