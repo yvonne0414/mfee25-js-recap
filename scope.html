@@ -10,14 +10,21 @@
 
 <body>
   <script>
-    // 函式作用域
-    function scopearea() {
-      var a = 10
+    // 函式作用域 Function Scope
+    function scope() {
+      var varFunc = 1;
+      let letFunc = 1;
     }
-    console.log(a) // undfined
+    // console.log(varFunc);
+    // console.log(letFunc);
 
-    // var 函式作用域
-    // let const 區域作用域
+    if (true) {
+      var varBlock = 2;
+      let letBlock = 2;
+    }
+
+    console.log(varBlock);
+    // console.log(letBlock);
   </script>
 
 </body>

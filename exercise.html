@@ -11,7 +11,7 @@
 <body>
   <script>
     // ============================= exercise1 =============================
-    let age = 10
+    // let age = 10
     // type1
     // let handleAge = age => {
     //   if (age > 18) {
@@ -26,7 +26,8 @@
     let handleAge = age => {
       return (age > 18) ? "成人" : (age > 12) ? "青少年" : "兒童"
     }
-    console.log(handleAge(age))
+    let rsAge = handleAge(10);
+    console.log(rsAge);
 
     // ============================= exercise2 =============================
     let color = "pink";
@@ -41,7 +42,34 @@
         default:
           console.log("其他顏色");
       }
-    })(color);
+    })("pink");
+    // (function (color) {
+    //   switch (color) {
+    //     case "red":
+    //       console.log("紅色");
+    //       break;
+    //     case "blue":
+    //       console.log("藍色");
+    //       break;
+    //     default:
+    //       console.log("其他顏色");
+    //   }
+    // })("pink");
+
+    // ============================= exercise2 =============================
+    let fibonacciGenerator = (n) => {
+      let tmp1 = 0;
+      let tmp2 = 1
+      let arr = [];
+      for (let i = 0; i < n; i++) {
+        let num = tmp1 + tmp2;
+        arr.push(tmp1);
+        tmp1 = tmp2;
+        tmp2 = num;
+      }
+      return arr
+    }
+    console.log(fibonacciGenerator(3))
 
   </script>
 </body>
