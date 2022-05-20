@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pass 傳值 vs. 傳址</title>
+</head>
+
+<body>
+  <script>
+    let x = 1;
+    let y = x;
+    y++;
+    console.log(x);
+    console.log(y);
+
+    let car1 = {
+      color: 'red'
+    }
+    let car2 = car1
+    car1.color = "blue"
+    console.log(car1);
+    console.log(car2);
+    car2 = {
+      brand: "BMW"
+    }
+    console.log(car2);
+
+    let car3 = { ...car1, brand: 'Ford' }
+    console.log(car3);
+
+    let lowercase = ['a', 'b', 'c']
+    let uppercase = ['D', 'E']
+    let string = 'Hellow!'
+    let all = [1, 2, ...lowercase, ...uppercase, ...string]
+    console.log(all);
+  </script>
+</body>
+
+</html>

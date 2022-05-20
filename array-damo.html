@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+  <body>
+    <script>
+      let animals = [
+        { id: 'a1', en: 'cat', cn: '貓', num: 20 },
+        { id: 'a2', en: 'dog', cn: '狗', num: 10 },
+        { id: 'a3', en: 'rabbit', cn: '兔', num: 5 },
+        { id: 'a4', en: 'bear', cn: '熊', num: 15 },
+        { id: 'a4', en: 'mouse', cn: '鼠', num: 20 },
+      ];
+      animals.forEach((animal, index) => {
+        console.log(animal);
+        console.log(index);
+      });
+      const animalNameCn = animals.map((animal, index) => {
+        return animal.cn;
+      });
+      console.log(animalNameCn);
+
+      let morThanTen = animals.filter((animal, index) => {
+        return animal.num > 10;
+      });
+      console.log(morThanTen);
+
+      let removeFirst = animals.filter((animal, index) => {
+        return index !== 0;
+      });
+      console.log(removeFirst);
+
+      let findA3 = animals.find((animal, index) => {
+        return animal.id == 'a3';
+      });
+      console.log(findA3);
+
+      let findA3index = animals.findIndex((animal, index) => {
+        return animal.id == 'a3';
+      });
+      console.log(findA3index);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>Hello World</title>
+</head>
+
+<body>
+  <div id='one'>
+    <div id='two'>
+      <div id='three'>
+        <p>Test</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    let div1 = document.getElementById('one');
+    let div2 = document.getElementById('two');
+    let div3 = document.getElementById('three');
+
+    div1.addEventListener('click', function (event) {
+      console.log('one');
+    }, false);
+    div2.addEventListener('click', function (event) {
+      console.log('two');
+    }, false);
+    div3.addEventListener('click', function (event) {
+      console.log('three');
+    }, false);
+
+    div1.addEventListener('click', function (event) {
+      console.log('one');
+    }, true);
+    div2.addEventListener('click', function (event) {
+      console.log('two');
+    }, true);
+    div3.addEventListener('click', function (event) {
+      console.log('three');
+    }, true);
+  </script>
+</body>
+
+</html>

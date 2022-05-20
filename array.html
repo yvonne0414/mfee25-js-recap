@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+  <body>
+    <script>
+      let animals = [
+        { id: 'a1', en: 'cat', cn: '貓', num: 30 },
+        { id: 'a2', en: 'dog', cn: '狗', num: 10 },
+        { id: 'a3', en: 'rabbit', cn: '兔', num: 5 },
+        { id: 'a4', en: 'bear', cn: '熊', num: 15 },
+        { id: 'a5', en: 'mouse', cn: '鼠', num: 20 },
+      ];
+      // 增加size
+      animals = animals.map((animal, index) => {
+        return (animal = { ...animal, size: 'small' });
+      });
+
+      // 修改bear size
+      let bearIndex = animals.findIndex((animal, index) => {
+        return animal.cn == '熊';
+      });
+      console.log(bearIndex);
+      animals[bearIndex].size = 'large';
+
+      // 新增一筆資料在index=2後面
+      // animals = animals.map((animal, index) => {});
+
+      // 找出 num <10 的動物中文
+      let lessThanTen = animals.filter((animal, index) => {
+        return animal.num < 10;
+      });
+      let animalNameCn = lessThanTen.map((animal, index) => {
+        return animal.cn;
+      });
+
+      console.log(animals);
+      console.log(animalNameCn);
+    </script>
+  </body>
+</html>
