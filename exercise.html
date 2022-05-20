@@ -61,15 +61,22 @@
       let tmp1 = 0;
       let tmp2 = 1
       let arr = [];
-      for (let i = 0; i < n; i++) {
-        let num = tmp1 + tmp2;
-        arr.push(tmp1);
-        tmp1 = tmp2;
-        tmp2 = num;
+      console.log(n)
+      if (n === 0) {
+        arr.push(0)
+      } else if (n === 1) {
+        arr.push(0, 1)
+      } else {
+        for (let i = 0; i < n; i++) {
+          let num = tmp1 + tmp2;
+          arr.push(tmp1);
+          tmp1 = tmp2;
+          tmp2 = num;
+        }
       }
       return arr
     }
-    console.log(fibonacciGenerator(3))
+    console.log(fibonacciGenerator(5))
 
   </script>
 </body>
