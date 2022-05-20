@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exercise</title>
+</head>
+
+<body>
+  <script>
+    // ============================= exercise1 =============================
+    let age = 10
+    // type1
+    // let handleAge = age => {
+    //   if (age > 18) {
+    //     return "成人"
+    //   } else if (age < 18 && age < 12) {
+    //     return "青少年"
+    //   }else{
+    //     return "兒童"
+    //   }
+    // }
+    // type2
+    let handleAge = age => {
+      (age > 18) ? "成人" : (age > 12) ? "青少年" : "兒童"
+    }
+
+    // ============================= exercise2 =============================
+    let color = "pink";
+    ((color) => {
+      switch (color) {
+        case "red":
+          console.log("紅色");
+          break;
+        case "blue":
+          console.log("藍色");
+          break;
+        default:
+          console.log("其他顏色");
+      }
+    })(color);
+
+  </script>
+</body>
+
+</html>
