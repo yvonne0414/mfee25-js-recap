@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hoisting</title>
+</head>
+
+<body>
+  <script>
+    // var的提升
+    console.log(a) // undefind : var提升會被初始化
+    var a = 1
+
+    // 函式提升
+    b()
+    function b() {
+      console.log("b")
+    }
+
+    // let
+    console.log(c) // error: 有變數提升，但未被初始化
+    let c = 1
+
+    var d = 10
+    function test() {
+      console.log(d) // 10
+    }
+    test()
+
+    var d = 10
+    function test() {
+      console.log(d) // cannot access 
+      let d
+    }
+    test() // 10
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function</title>
+</head>
+
+<body>
+  <script>
+    // 宣告
+    function ass(a, b) {
+      return a + b
+    }
+    let rs = add(1, 3)
+    console.log(rs)
+
+    // 表達式/運算式 ： 不會被提升
+    let subtract = function (a, b) {
+      return a - b
+    }
+
+    // 箭頭函式
+    const multiply = (a, b) => {
+      return a * b
+    }
+
+    const multiply2 = (a, b) => a * b
+
+    let print = str => console.log(str)
+
+      (function (a, b) {
+        return a / b
+      })(1, 2)
+
+      ((a, b) => {
+        return a / b
+      })(1, 2)
+
+  </script>
+</body>
+
+</html>
